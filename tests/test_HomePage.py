@@ -13,12 +13,13 @@ class TestHomePage(BaseClass):
     def test_formSubmission(self,getData):
         log = self.getLogger()
         homepage= HomePage(self.driver)
+        print("hi radhika")
         log.info("first name is "+getData["firstname"])
         homepage.getName().send_keys(getData["firstname"])
         homepage.getEmail().send_keys(getData["lastname"])
         homepage.getCheckBox().click()
         self.selectOptionByText(homepage.getGender(), getData["gender"])
-
+        print("hi radhika")
         homepage.submitForm().click()
 
         alertText = homepage.getSuccessMessage().text
